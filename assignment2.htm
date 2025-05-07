@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0048)https://cs.nju.edu.cn/liyf/aml21/assignment2.htm -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Advanced Machine Learning Assignment2</title>
+  <style type="text/css">
+    .style10 {
+      color: #339966;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .style13 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+    }
+
+    .style15 {
+      color: #FF0000
+    }
+
+    .style7 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: #339966;
+      font-weight: bold;
+    }
+
+    .style8 {
+      color: #339966
+    }
+
+    .style9 {
+      color: #FF3333;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    body {
+      background-color: #FFFFFF;
+    }
+
+    body,
+    td,
+    th {
+      font-family: Georgia, Times New Roman, Times, serif;
+    }
+
+    .style16 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+      color: #FF0000;
+    }
+    .custom-image {
+    width: 1100px;
+    height: 300px;
+  }
+
+  </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed=""
+  style="cursor: url(&quot;chrome-extension://jlgkpaicikihijadgifklkbpdajbkhjo/image/cursors/008.png&quot;), default;">
+
+  <!-- <h1 align="center">Assignment 2: TBD</h1>
+  <p align="center">[<a href="aml25.htm" class="style9">Advanced Machine Learning
+      Course</a>]</p> -->
+
+
+  <h1 align="center">Assignment 2: Learning from a Data Set </h1>
+  <p align="center" class="style8"><a href="aml25.htm" class="style9">[Advanced Machine
+      Learning Course]</a> </p>
+  <hr align="center" width="100%">
+  <h3 class="style8">Overview</h3>
+  <blockquote>
+    <p><span class="style13">Your job includes,</span></p>
+    <p class="style13">1) <a href="assignment2.htm#1">Read the description of the task
+        and download the data set</a></p>
+    <p class="style13">2) <a href="assignment2.htm#2">Implement an algorithm and output
+        the prediction</a></p>
+    <p class="style13">3) <a href="assignment2.htm#3">Write a report</a></p>
+    <p class="style13">4) <a href="assignment2.htm#4">Submit your work</a></p>
+    <p class="style13">TA's job is to <a href="assignment2.htm#5">evaluate your
+        work</a>.</p>
+    <p>Here are some <a href="assignment2.htm#6">baselines</a> for your consideration.</p>
+    <p class="style16">CAUTION: DO YOUR JOB ALONE! </p>
+  </blockquote>
+  <h3><a name="1"></a><span class="style8">Task Decription and dataset download</span></h3>
+  <blockquote>
+    <p class="style13"><strong>The Story</strong>:
+      We create a weakly supervised image classification task using the Fashion-MNIST dataset. Each image is 28x28 pixels, represented as a flattened array of 784 pixel values (ranging from 0 to 255). Each label is an integer value ranging from 0 to 9.
+
+      In the training set, 20% of the image labels are retained, while the remaining 80% are discarded to serve as unlabeled training data. We ensure the balance of sampling, the specific details are as follows:
+      <list>
+        <li><strong>train_image_labeled.csv</strong>: The labeled images consist of a total of 12,000 samples, encompassing 10 classes, with 1,200 images per class.</li>
+        <li><strong>train_label.csv</strong>: The training image labels consist of a total of 12,000.</li>
+        <li><strong>train_image_unlabeled.csv</strong>: The shuffled unlabeled images data consist of a total of 48,000 samples, with 4,800 unlabeled images per class. You need to fully utilize these unlabeled data in your algorithm.</li>
+        <li><strong>test_image.csv</strong>: The test data consists of a total of 10,000 test images.</li>
+        </list></p>
+    <p class="style13"><strong>Download</strong>:</p>
+    <p class="style13"><a href="./Dataset.zip">Original data file</a>
+    </p>
+    <p class="style13"><strong>Task</strong>:  Predict "label" for each record in the <strong>test_image.csv</strong> </p>
+
+  </blockquote>
+  <h3 class="style8"><a name="2"></a> Implementation and Output</h3>
+  <blockquote>
+    <p class="style13"><strong>Implementation</strong>: It is up to you to implement any learning algorithm with any
+      programming language. It is encouraged that you can make some detail analysis about the difficulty of this task,
+      and this will be good to you to find out appropriate learning algorithm. Problem analysis and innovative thoughts
+      will help you get higher score.</p>
+    <p class="style13"><strong>Output</strong>: The output of your learning algorithm should be a txt file
+      "yourId.txt" which contains 1000 lines without header, each line is prediction for the corresponding example. <span class="style16">Please do not make confusion about the order of test example,
+        otherwise you may get a very low accuracy.</span></p>
+  </blockquote>
+  <h3 class="style13"><a name="3"></a> <span class="style8">How to write and what to write</span></h3>
+  <blockquote class="style13">
+    <p>Your report should includes:</p>
+    <p>1) Your understand and analysis of the problem;</p>
+    <p>2) The motivation of your algorithm and introduction of the background of your algorithm;</p>
+    <p>3) Full technical details of your algorithm, especially including pseudo code of your algorithm;</p>
+    <p>4) Description or analysis of the performance you got;</p>
+    <p>5) Conclusion and (optional) discussion</p>
+    <p>&nbsp;</p>
+    <p class="style16"> CAUTION: NOT PLAGIARIZE! OTHERWISE, YOU WILL GET PUNISHMENT!</p>
+    <p class="style13"> Please use <a href="template.doc">MSWord template</a> or <a href="https://www.overleaf.com/read/vnhjzqhshcrr">LaTeX template</a> to write
+      your report <span class="style15">in chinese with english abstract</span>. <span class="style15">Attention</span>, please transform your source file
+      to PDF file for submission.</p>
+    <p class="style13">Name your PDF file with "report.pdf". </p>
+    <p>&nbsp;</p>
+  </blockquote>
+  <h3 class="style8"><a name="4"></a> How to submit</h3>
+  <blockquote>
+    <p class="style13">Your submission includes:</p>
+    <p class="style13">1) 'yourId.txt' file : containing 10000 lines of predictions;</p>
+    <p class="style13">2) 'report.pdf' file : your report;</p>
+    <p class="style13">3) source file of your algorithm (Do not submit the whole data set or the trained model to FTP)</p>
+    <p class="style13"><strong>Please</strong> carefully check out your submission.</p>
+    <p class="style13"><strong>Note</strong> that "yourId" should be replaced with your ID and the name of the files
+      should not be other names.</p>
+    <p class="style13">
+      <strong>Pack</strong> all your files into a single compressed file (compress in ZIP format).
+    </p>
+    <p class="style13">
+      <strong>Name</strong> the compressed file using your student ID and version number, e.g., "AB12345678_v1.zip".
+      We will take your file with highest version number as your final homework, e.g., "AB12345678_v2.zip"<br>
+      <span class="style15">Please delete the .bak, i.e., the backup files from your final zip files.</span><br>
+    </p>
+    <p class="style13"><strong>Upload</strong> your compressed file to FTP: </p>
+    <p class="style13"><a href="sftp://www.lamda.nju.edu.cn">sftp://www.lamda.nju.edu.cn</a></p>
+    <p class="style13">switch path to:
+      /D:/courses/AML25/assignment2
+    </p>
+    <p class="style13">username: aml25</p>
+    <p class="style13">password: course01234!@#$</p>
+  </blockquote>
+  <h3 class="style8"><a name="5"></a> Evaluate your work</h3>
+  <blockquote>
+    <p class="style13"><strong>Evaluate of your prediction</strong>: According to your "yourId.txt", we will use macro F1 score to evaluate your prediction. As for macro F1 score, you
+      may refer to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"
+        target="_blank">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html</a>.</p>
+    <p class="style13"><strong>Evaluate of your report</strong>: Novel idea, sound techniques, and beautiful writing
+      gain you high scores. See also <span class="style13"><a href="assignment1.htm"
+          target="_blank">The evaluation of your report </a>in Assignment 1. </span></p>
+    <p class="style13"><strong>Evaluate of your source code</strong>: Fake and plagiarized source codes receives low
+      scores. </p>
+  </blockquote>
+  <h3 class="style8"><a name="6"></a> Baselines</h3>
+  <blockquote>
+    <p class="style13">Some classic algorithms such as Random Forest, Logistic Regression, XGBoost GBDT, SVM, MLP, GBDT etc., serve as baselines. The performance of these algorithms can be referenced, and we look forward to you providing better solutions. </p>
+    <p class="style13"><strong>Download</strong>:</p>
+    <p class="style13"><a href="./baseline.py">Baselines</a></p>
+  </blockquote>
+  <h3 class="style8"><a name="Deadline" id="Deadline"></a><span class="style8">About the DEADLINE and Score.</span></h3>
+  <blockquote>
+    <p class="style15">Deadline: 2025.05.09</p>
+    <p class="style13">Scores: 25%</p>
+  </blockquote>
+
+  <script>mendeleyWebImporter = {
+      downloadPdfs(t) { return this._call('downloadPdfs', [t]); },
+      open() { return this._call('open', []); },
+      _call(methodName, methodArgs) {
+        const id = Math.random();
+        window.postMessage({ id, token: '0.11394457659697022', methodName, methodArgs }, 'https://cs.nju.edu.cn');
+        return new Promise(resolve => {
+          const listener = window.addEventListener('message', event => {
+            const data = event.data;
+            if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+            window.removeEventListener('message', listener);
+            resolve(data.result);
+          });
+        });
+      }
+    };</script>
+</body>
+
+</html>
