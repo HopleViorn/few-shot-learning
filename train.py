@@ -208,7 +208,7 @@ class Trainer:
 
 if __name__ == '__main__':
     config = {
-        'batch_size': 64,
+        'batch_size': 512,
         'mu': 7,  # 无标签数据batch size倍数
         'epochs': 100,
         'lr': 0.0005,
