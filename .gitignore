@@ -1,5 +1,5 @@
 exp
 *.pth
 *.log
-data
 __pycache__
+data
